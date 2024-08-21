@@ -1,8 +1,9 @@
 import leia from 'readline-sync'
 
 /*Escreva um algoritmo que receba 5 nomes e 5 idades do usuário,
- armazene essas informações em dois vetores, e depois exiba o nome e a idade da pessoa mais velha e da pessoa mais nova.*/
-var idadeMenor : number = 0;
+ armazene essas informações em dois vetores, e depois exiba o nome e a idade da pessoa mais velha e da pessoa mais nova.
+
+ var idadeMenor : number = 0;
 var nomeMenor: string;
 var idadeMaior: number = 0;
 var nomeMaior: string;
@@ -42,4 +43,6 @@ function verificarMaiorIdade(){
 
 pedirNomes();
 verificarMenorIdade();
-verificarMaiorIdade(); 
+verificarMaiorIdade(); */
+
+
