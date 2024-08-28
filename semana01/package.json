@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "exe": "tsx ./src/exe02.ts"
+    "exe": "tsx ./src/index.ts"
   },
   "keywords": [],
   "author": "",
