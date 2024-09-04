@@ -13,6 +13,7 @@ export default class ContaCorrente extends ContaBancaria{
         return this.limite;
     }
     
+    
     public override sacar(valor: number): void {
         var valorDisponivel = this.getSaldo() + this.limite;
         
@@ -25,9 +26,22 @@ export default class ContaCorrente extends ContaBancaria{
             var aux = valor - this.getSaldo();
             this.limite = this.limite - aux;
             this.setSaldo(0);
+            return
         }
         
-        this.setSaldo(this.getSaldo() - valor);
-
+        var saldo = this.getSaldo()
+        this.setSaldo(saldo - valor);
+        console.log(`Novo saldo: ${saldo}`)
     }
+
+    public override exibirCliente(){
+        console.log(`
+        Saldo: ${this.getSaldo()}
+        Chave pix: ${this.getChavePix()}
+        Numero da conta: ${this.getNumeroConta()}
+        Data de criação: ${this.getData_Criacao()}
+        Novo limite: ${this.getLimite()}
+        `)
+    }
+
 }

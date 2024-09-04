@@ -61,19 +61,22 @@ export default class ContaBancaria{
         }
            
         this.saldo += valor;
-        console.log(`Deposito realizado com sucesso. /n Seu saldo é de: ${this.getSaldo()}`)
+        console.log(`Deposito realizado com sucesso. 
+         Seu saldo é de: ${this.getSaldo()}`)
         
     }
 
 
     public sacar(valor: number){
-        if(valor < this.saldo || this.saldo <= 0){
-            console.log("Não é possivel sacar o dinheiro. /n  Por favor, verifique as informaçoes.")
+        if(valor > this.saldo || this.saldo <= 0){
+            console.log(`Não é possivel sacar o dinheiro.   
+            Por favor, verifique as informaçoes.`)
             return;
         }
 
         this.saldo -= valor;
-        console.log(`Saque de R$ ${valor} realizado com sucesso. /n O saldo da sua conta é de: R$${this.getSaldo()}`);
+        console.log(`Saque de R$ ${valor} realizado com sucesso. 
+         O saldo da sua conta é de: R$${this.getSaldo()}`);
     }
 
     public consultarSaldo(){
@@ -88,6 +91,7 @@ export default class ContaBancaria{
         Chave pix: ${this.getChavePix()}
         Numero da conta: ${this.getNumeroConta()}
         Data de criação: ${this.getData_Criacao()}
+        console.log(this.limite)
         `)
     }
 }
