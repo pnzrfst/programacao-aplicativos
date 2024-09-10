@@ -54,8 +54,37 @@ export default class Banco{
     }
 
     public transferenciaContas(){
+        var contaDeOrigem = leia.question("Digite o numero da conta de origem da transferencia: ");
+        var indexDeOrigem;
+        for(let i = 0; i < this.contasGeradas.length; i++){
+            if(contaDeOrigem == this.contasGeradas[i].getNumeroConta()){
+                indexDeOrigem = i
+            }
+        }
+
+        if(indexDeOrigem == undefined){
+            console.log("A conta não foi encontrada.")
+            return
+        }
+
+        var contaDeDestino = leia.question("Digite o numero da conta de destino da transferência: ");
+        var indexDeDestino = this.contasGeradas.findIndex(contasgeradas => contasgeradas.getNumeroConta() == contaDeDestino);
         
+        if(indexDeDestino == -1){
+            console.log("A conta não foi encontrada.");
+            return
+        }
+
+        var valorTransferencia = leia.questionFloat("Agora, digite o valor que você deseja transferir: ");
+        
+        if(this.contasGeradas[indexDeOrigem].getSaldo() >= valorTransferencia){
+            this.contasGeradas[indexDeOrigem].sacar(valorTransferencia);
+            this.contasGeradas[indexDeDestino].depositar(valorTransferencia);
+            
+            return
+        }
     }
+
 
 
 } 

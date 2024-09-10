@@ -1,5 +1,5 @@
 export default class Dono{
-    constructor(nome: string;){
+    constructor(nome: string){
         this.nome = nome;
     }
     

@@ -3,11 +3,11 @@ import TitularConta from "./TitularConta";
 
 export default class ContaBancaria{
     constructor(titular: TitularConta, chavePix: string){
-        this.saldo = 0;
+        this.saldo = 100;
         this.titularConta = titular;
         this.chavePix = chavePix;
         this.data_criacao = new Date();
-        this.numero = String((Math.random() * 89999) + 10000);
+        this.numero = String((Math.random() * 5).toFixed(2));
     }
 
     private numero: string;
