@@ -8,7 +8,7 @@ export default class Veiculo{
         this.estaDisponivel = true;
     }
     
-    private marca: string
+    protected marca: string
 
     protected getMarca() : string{
         return this.marca;
@@ -45,5 +45,24 @@ export default class Veiculo{
         this.estaDisponivel = estaDisponivel
     }
 
-    private histTransf = [];
+    protected histTransf: number[] = [];
+
+    verDetalhes() : void{
+        console.log(`
+            Marca: ${this.marca},
+            Modelo: ${this.modelo},
+            Ano: ${this.ano},
+            Valor: ${this.valor},
+            Disponivel: ${this.estaDisponivel}
+            Historico de transferencias: ${this.histTransf}
+            `)
+    }
+
+    historicoTransferencia(vezesTransferido: number, dataTransferencia: string) : void{
+        this.histTransf.push(vezesTransferido);
+        var arrayTransferencias = []
+        arrayTransferencias.push(dataTransferencia)
+        console.log(dataTransferencia)
+    }
+
 }
