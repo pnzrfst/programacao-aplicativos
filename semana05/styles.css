@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: MuseoSans,Arial,sans-serif;
     background-color: #ddd;
     min-height: 100vh;
 }
@@ -14,6 +14,7 @@ a{
     text-decoration: none;
     background-color: transparent;
 }
+
 
 span{
     border: 1px solid #6a737b86;
@@ -24,6 +25,7 @@ span{
 header{
     background-color: #fff;
     width: 100vw;
+    box-shadow: 2px 3px #6a737b18;
 }
 
 nav{
@@ -49,12 +51,14 @@ main{
     background-color:  #fff;;
     margin: 3rem;
     padding: 5rem;
-
+    box-shadow: 2px 3px #6a737b11;
 }
 
 main .content-itens{
     display: flex;
+    color: #333333;
     justify-content: space-evenly;
+    gap: 2rem;
     text-align: center;
 }
 
@@ -69,18 +73,136 @@ main .content-itens{
     height: 120px;
 }
 
+.introduction-text p{
+    color: #80868b;
+}
+
 main button{
     display: block;
     background-color: #0f6cbf;
     color: #fff;
     width: 100px;
+    font-size: 1rem;
     padding: 6px;
-    border-radius: 1rem;
+    box-shadow: 2px 3px #6a737b18;
+    border: none;
 }
 
 main button:hover{
-    background-color: #4b8bc4;
+    background-color: #0c4c85;
+    cursor: pointer;
 }
 
 
 /*-----------------------------------------------------------------------*/
+
+
+aside{
+    margin: 3rem;
+}
+
+aside .background-container{
+    background-color: #fff;
+    color: #333333;
+    display: flex;
+    box-shadow: 2px 3px #6a737b18;
+    transition: background-image 0.5s ease;
+}
+
+aside .text-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5rem;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.text-info h1{
+    font-size: 3rem;
+}
+
+.text-info button{
+    width: 20vw;
+    padding: 6px;
+    margin: 1rem;
+    font-size: 1rem;
+    background-color: #0f6cbf;
+    color: #fff;
+    border: none;
+}
+
+.text-info button:hover{
+    cursor: pointer;
+    background-color: #0c4c85;
+}
+
+/*----------------------------------------------------------------------*/
+
+.img-source{
+    width: 80%;
+    height: auto;
+}
+
+.img-source img{
+    width: 80%;
+    height: 550px;
+    object-fit: cover;
+    
+}
+
+/*----------------------------------------------------------------------*/
+
+footer{
+    color: #fff;
+    width: 100vw;
+    background-color: #0f6cbf;
+    list-style: none;
+  
+}
+
+footer .client-infos{
+    display: flex;
+    width: 100%;
+    padding: 5rem;
+    margin-top: 3rem;
+    justify-content: end;
+    align-items: baseline;
+} 
+
+.adress-and-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adress-and-contact ul{
+    list-style: none;
+}
+
+.adress-and-contact svg {
+    margin-right: 2rem;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.client-infos #buttonContato{
+    width: 20vw;
+    margin-top: 4rem;
+    padding: 6px;
+    color: #fff;
+    font-size: 1rem;
+    background-color: #0c4c85;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.client-infos #buttonContato:hover{
+    background-color: #fff;
+    color: #0c4c85;
+    
+}
+
