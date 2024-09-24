@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale com o professor - SENAI</title>
+    <link rel="stylesheet" href="../style/professor.css">
+</head>
+<body onkeypress="capturaEnter(event)">
+    <section id="formulario">
+        <form action="">
+            <label for="fname">Digite seu nome:</label>
+            <input type="text" id="Fname" name="Fname" oninput=""><br>
+            <label for="mensagemUser">Digite seu comentário: </label>
+            <input type="text" id="mensagemForm" name="mensagemForm">
+            <label for="text">Digite o nome do professor</label>
+            <input type="text" id="professorForm" name="professorForm"><br>
+            <input id="button" type="submit" value="Enviar" onclick="pegarInformacoesUser(event)">
+        </form>
+    </section>
+
+    <section class="comments">
+        <h1>Comentários</h1>
+        <div class="comments-container">
+            <div class="comment-template">
+                <div class="infosUser">
+                    <p>nome: </p>
+                    <span></span>
+                    <p>email: </p>
+                </div>
+               <p>comentario aqui</p>
+            </div>
+            
+        </div>
+    </section>
+</body>
+<script src="../scripts/professor.js"></script>
+</html>
