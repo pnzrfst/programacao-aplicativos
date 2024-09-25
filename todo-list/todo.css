@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+
+.main-container{
+    background-color: #fff;
+    width: 50vw;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 1px 0px 5px 1px rgba(201,191,201,1);
+}
+
+.write-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+.write-bar #escrevaTarefa {
+    flex: 1;
+    width: 25vw;
+    background-color: rgb(235, 229, 229);
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.write-bar #salvarTarefa {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    background-color: rgb(98, 94, 160);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#salvarTarefa:hover{
+    background-color:  rgb(99, 90, 226);
+}
+
+
+/*-----------------------------------------*/
+
+/*container com as tarefas*/
+#mostrarTarefa{
+   list-style-type: none;
+   margin-top: 1rem;
+   width: 35vw;
+   padding: 1rem;
+   justify-content: space-between;
+   display: flex;
+   flex-direction: column;
+   flex: content;
+   background-color: rgb(245, 249, 253);
+   box-shadow: 1px 0px 3px 1px rgba(201,191,201,1);
+   
+}
+
+
+/*container da tarefa*/
+.tarefa{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 32vw;
+    padding: 0.7rem;
+    background-color: antiquewhite;
+    margin-bottom: 10px
+} 
+
+
+.span-btns{
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+#adicionarTarefa{
+    color: rgb(147, 226, 28);
+}
+
+#deletarTarefa{
+    color: rgb(185, 16, 16);
+}
+
+#marcarConcluida{
+    color: rgb(108, 194, 87);
+}
+
+.completed{
+    background-color: rgb(165, 196, 134) important; 
+}
+
+
+
+
+
+
