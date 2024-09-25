@@ -16,6 +16,7 @@ const adicionarTarefas = ()=>{
     }
 
     tarefas.push(novaTarefa)
+    mostrarTarefas()
 
     inputWrite_bar.value = "";
 
@@ -28,43 +29,85 @@ const adicionarTarefas = ()=>{
 
 const mostrarTarefas = ()=>{
     const $listaDeTarefas = document.getElementById('mostrarTarefa');
+    $listaDeTarefas.innerHTML = ""
     
-    for(let i = 0; i < $listaDeTarefas.length; i++){
-
-        const tarefa = document.createElement("div");
-        const li = document.createElement("li");
-        const spanLi = document.createElement("span");
+    for(let i = 0; i < tarefas.length; i++){
+        const lista = document.createElement("li");
 
         if(tarefas[i].completed === true){
-            itemLista.classList.add("completed");
+            lista.classList.add("completed");
         }
 
-        spanLi.textContent = tarefas[i].text;
+        const textoTarefa = document.createElement("span");
+        textoTarefa.id = 'textoTarefa'
+        textoTarefa.textContent = tarefas[i].texto;
+
+
+        const divbtns = document.createElement("div");
+        divbtns.id = "div-btns"
         
-        const adicionarNovaTarefa = document.createElement('span');
-        adicionarNovaTarefa.className = 'material-symbols-outlined';
-        adicionarNovaTarefa.id = 'adicionarTarefa';
-        adicionarNovaTarefa.setAttribute('completed', 'true');
-        adicionarNovaTarefa.textContent = 'add';
+        const editarTarefa = document.createElement('button');
+        editarTarefa.className = 'material-symbols-outlined';
+        editarTarefa.id = 'editarTarefa';
+        editarTarefa.setAttribute('completed', 'false');
+        editarTarefa.textContent = 'edit';
+        editarTarefa.addEventListener('click', () =>{  
+            const tarefaAlteradaTexto = window.prompt("Digite o novo texto:");
+            const tarefaAntiga = tarefas.indexOf(tarefas[i]);
+            tarefas.splice(tarefaAntiga,1);
 
-        const excluirTarefa = document.createElement('span');
+            const tarefaAlterada = {
+                id: Math.floor(Math.random() * 1000),
+                texto: tarefaAlteradaTexto,
+                completed: false
+            }
+
+            tarefas.push(tarefaAlterada);
+            mostrarTarefas();
+            return
+        })
+
+       
+        const excluirTarefa = document.createElement('button');
         excluirTarefa.className = 'material-symbols-outlined';
-        excluirTarefa.id = 'adicionarTarefa';
-        excluirTarefa.setAttribute('completed', 'true');
-        excluirTarefa.textContent = 'add';
-
-        const marcarTarefaConcluida = document.createElement('span');
+        excluirTarefa.id = 'deletarTarefa';
+        excluirTarefa.setAttribute('completed', 'false');
+        excluirTarefa.textContent = 'delete';
+        excluirTarefa.addEventListener('click', () =>{
+            const tarefaExcluir = tarefas.indexOf(tarefas[i]);
+            tarefas.splice(tarefaExcluir,1)
+            $listaDeTarefas.removeChild(lista)
+            return
+        })
+        
+   
+        const marcarTarefaConcluida = document.createElement('button');
         marcarTarefaConcluida.className = 'material-symbols-outlined';
-        marcarTarefaConcluida.id = 'adicionarTarefa';
-        marcarTarefaConcluida.setAttribute('completed', 'true');
-        marcarTarefaConcluida.textContent = 'add';
+        marcarTarefaConcluida.id = 'marcarConcluida';
+        marcarTarefaConcluida.setAttribute('completed', 'false');
+        marcarTarefaConcluida.textContent = ' check_box';
+        marcarTarefaConcluida.addEventListener('click', () =>{
+            if(lista.classList.completed == true){
+                lista.classList = ""
+            }else{
+                lista.classList = "completed"
+            }
+        })
+       
 
-        const span_btns = document.createElement('div');
+        divbtns.appendChild(editarTarefa);
+        divbtns.appendChild(excluirTarefa);
+        divbtns.appendChild(marcarTarefaConcluida);
 
-        span_btns.appendChild(adicionarNovaTarefa, excluirTarefa, marcarTarefaConcluida);
 
-        itemLista.appendChild(spanLista,span_btns);
+
+        lista.appendChild(textoTarefa);
+        lista.appendChild(divbtns);
+
+
+
+        $listaDeTarefas.appendChild(lista);
         
     }
+    
 }
-
