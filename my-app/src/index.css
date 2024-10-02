@@ -1,0 +1,163 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: rgba(135, 206, 250, 0.068);
+}
+
+/*---------------------------------------------------*/
+/* nav e itens*/
+nav{
+  background-color: rgb(173, 216, 230);
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 1rem;
+  margin-bottom: 1rem;
+} 
+
+nav .fotoUser{
+  margin-left: 1rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 70%;
+  background-color: #ffffff;
+}
+
+
+nav #nav-itens{
+  color: #ffffff;
+  padding: 1rem;
+  display: flex;
+  margin-right: 1rem;
+  gap: 2rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+
+header{
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+
+/*-------------------------------------------*/
+/* container com os inputs*/
+
+.write-task{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(239, 248, 248);
+  width: 50vw;
+  padding: 2em;
+  margin-top: 3rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.192);
+}
+
+.write-task h1{
+  font-size: 2rem;
+  color: rgb(13, 186, 243);
+}
+.write-task p{
+  margin-bottom: 1rem;
+  color: rgba(211, 211, 211, 0.842);
+}
+
+.write-task button{
+  justify-content: first baseline;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  background-color: lightskyblue;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+  margin-left: 1rem;
+}
+
+.write-task button:hover{
+  background-color: rgb(74, 181, 247);
+  cursor: pointer;
+}
+
+.write-task input{
+  justify-content: first baseline;
+  padding: 0.3rem;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+  flex: 1;
+  outline: none;
+}
+
+/*----------------------------*/
+/*---main para mostrar as tarefas*/
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+  padding: 5rem;
+  background-color: #eeecec4d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.199);
+}
+
+#tarefas{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+#tarefas li{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: first baseline;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: antiquewhite;
+  width: 50vw;
+  padding: 2rem;
+}
+
+#tarefas span{
+  flex: 1;
+}
+
+.btns-actions{
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+}
+
+#editarTarefa{
+  background-color: rgba(100, 100, 231, 0.74);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+#apagarTarefa{
+  background-color: rgb(236, 69, 69);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+#atualizarTarefa{
+  background-color: rgb(138, 209, 138);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.completed{
+  background-color: rgba(138, 209, 138, 0.377) !important;
+}

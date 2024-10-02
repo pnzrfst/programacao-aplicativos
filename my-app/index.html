@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Faça coisas</title>
+
+  </head>
+  <body>
+    <nav>
+      <div class="fotoUser"></div>
+        <ul id="nav-itens">
+          <li>Tarefas</li>
+          <li>Concluidas</li>
+        </ul>
+      </div>
+    </nav>
+    
+    <header>
+      <section class="write-task">
+        <div class="input-group">
+          <h1>Coisas para fazer</h1>
+          <p>Adicione tarefas à lista</p>
+          <input for="text" id="writeBar">
+          <button id="saveTask" onclick="">Salvar tarefa</button>
+        </div>
+      </section>
+    </header>
+
+
+    <main>
+      <ul id="tarefas">
+        <li>
+          <span>Tarefa 1</span>
+          <div class="btns-actions">
+            <button type="button" id="editarTarefa">Editar</button>
+            <button type="button" id="apagarTarefa">Apagar</button>
+            <button type="button" id="atualizarTarefa">Marcar concluida</button>
+          </div>
+        <li class="completed">
+          <span>Tarefa 2</span>
+          <div class="btns-actions">
+            <button type="button" id="editarTarefa">Editar</button>
+            <button type="button" id="apagarTarefa">Apagar</button>
+            <button type="button" id="atualizarTarefa">Marcar concluida</button>
+          </div>
+      </ul>
+    </main>
+    <aside></aside>
+    <footer></footer>
+    <script type="module" src="/src/renderer.ts"></script>
+  </body>
+</html>
