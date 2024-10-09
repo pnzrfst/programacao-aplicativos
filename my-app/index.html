@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta charset="UTF-8" />
     <title>Faça coisas</title>
 
   </head>
   <body>
     <nav>
-      <div class="fotoUser"></div>
+      <div class="fotoUser">
+        <span class="material-symbols-outlined">
+          person
+          </span>
+      </div>
         <ul id="nav-itens">
           <li>Tarefas</li>
           <li>Concluidas</li>
@@ -20,8 +25,8 @@
         <div class="input-group">
           <h1>Coisas para fazer</h1>
           <p>Adicione tarefas à lista</p>
-          <input for="text" id="writeBar">
-          <button id="saveTask" onclick="">Salvar tarefa</button>
+          <input for="text" id="writeBar" onkeypress="adicionarPeloEnter(event)">
+          <button id="saveTask" onclick="adicionarTarefa()">Salvar tarefa</button>
         </div>
       </section>
     </header>
@@ -36,6 +41,7 @@
             <button type="button" id="apagarTarefa">Apagar</button>
             <button type="button" id="atualizarTarefa">Marcar concluida</button>
           </div>
+        </li>
         <li class="completed">
           <span>Tarefa 2</span>
           <div class="btns-actions">
@@ -43,6 +49,7 @@
             <button type="button" id="apagarTarefa">Apagar</button>
             <button type="button" id="atualizarTarefa">Marcar concluida</button>
           </div>
+        </li>
       </ul>
     </main>
     <aside></aside>
