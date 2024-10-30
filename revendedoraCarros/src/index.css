@@ -253,26 +253,28 @@ aside .marcas{
 }
 
 .mostrarVeiculos{
+  display: flex;
   width: 100%;
+  flex: 1;
   height: fit-content;
+  flex-wrap: wrap;
   padding: 2rem;
   margin-left: 1rem;
+  gap: 2rem;
 }
 
 .container-veiculos{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
   padding: 1rem;
   width: 100%;
-  flex: 0;
   list-style: none;
 }
 
 .veiculo{
   display: flex;
   height: fit-content;
-  flex-direction: column;
+  width: fit-content;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.123);
   border-radius: 1rem;
 }

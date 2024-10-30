@@ -11,8 +11,52 @@
  */
 
 import './index.css';
+import Veiculo from './models/Veiculo';
 
-const listaDeVeiculos: any = []
+// window.addEventListener("ready", (event) => {
+//   const veiculos = (window as any).dbAPI.mostrarVeiculo()
+//   console.log(veiculos)
+// })
+
+
+const listaDeVeiculos: Veiculo[] = []
+
+window.onload = async() =>{
+  
+  const veiculos = await(window as any).dbAPI.mostrarVeiculo();
+  console.log(veiculos)
+  const ulVeiculos = document.getElementById('mostrarVeiculos');
+  ulVeiculos.innerHTML = ''
+
+  veiculos.forEach((posicao : number) => {
+      const veiculo = new Veiculo(
+       veiculos[posicao].modelo,
+       veiculos[posicao].cor,
+       veiculos[posicao].ano,
+       veiculos[posicao].preco,
+       veiculos[posicao].imagem
+      )
+      
+      listaDeVeiculos.push(veiculo)
+
+      for(var i = 0; i < listaDeVeiculos.length; i++){
+        ulVeiculos.innerHTML += 
+        `<li class="veiculo">
+              <span>
+                <img src= ${listaDeVeiculos[i].getImagem()}>
+                <div class="infosVeiculo">
+                  <h1>${listaDeVeiculos[i].getModelo()}</h1>
+                  <p>${String(listaDeVeiculos[i].getPreco())}</p>
+                  <div class="btns-veiculo">
+                    <button id="verVeiculo">Ver detalhes</button>
+                    <button id="apagarVeiculo">Apagar</button>
+                  </div>
+                </div>
+              </span>
+            </li>`
+      }
+  });  
+};
 
 document.getElementById('salvarCadastro').addEventListener("click", (event: MouseEvent) =>{
     event.preventDefault()
@@ -21,16 +65,11 @@ document.getElementById('salvarCadastro').addEventListener("click", (event: Mous
     const anoVeiculo = document.getElementById("anoVeiculo") as HTMLInputElement;
     const precoVeiculo = document.getElementById("precoVeiculo") as HTMLInputElement;
     const fotoVeiculo = document.getElementById("fotoVeiculo") as HTMLInputElement;
-
-    const novoCarro = {
-        modelo: modelo.value,
-        cor: corVeiculo.value,
-        ano: anoVeiculo.value,
-        preco: precoVeiculo.value,
-        foto: fotoVeiculo.value
-    }
     
-    listaDeVeiculos.push(novoCarro);
+    const novoVeiculo = new Veiculo(modelo.value, corVeiculo.value, Number(anoVeiculo.value), Number(precoVeiculo.value), fotoVeiculo.value);
+
+    listaDeVeiculos.push(novoVeiculo);
+    (window as any).dbAPI.criaVeiculo(novoVeiculo)
 
     modelo.innerHTML = ""
     corVeiculo.innerHTML = ""
@@ -41,22 +80,6 @@ document.getElementById('salvarCadastro').addEventListener("click", (event: Mous
     const listarVeiculos = document.getElementById('mostrarVeiculos');
     listarVeiculos.innerHTML = ""
 
-    for(var i = 0; i <listaDeVeiculos.length; i++){
-        listarVeiculos.innerHTML += 
-        `<li class="veiculo">
-              <span>
-                <img src= ${listaDeVeiculos[i].foto}>
-                <div class="infosVeiculo">
-                  <h1>${listaDeVeiculos[i].modelo}</h1>
-                  <p>${listaDeVeiculos[i].preco}</p>
-                  <div class="btns-veiculo">
-                    <button id="verVeiculo">Ver detalhes</button>
-                    <button id="apagarVeiculo">Apagar</button>
-                  </div>
-                </div>
-              </span>
-            </li>`
-    }
 })
 
 console.log('👋 This message is being logged by "renderer.js", included via webpack');
