@@ -65,6 +65,10 @@ ipcMain.handle('render', async () => {
   return new VeiculoRepository().mostrarVeiculos();
 })
 
-ipcMain.handle('find', async (event: any, id: string) => {
+ipcMain.handle('find', async (_: any, id: string) => {
   return new VeiculoRepository().procurarVeiculo(id);
+})
+
+ipcMain.handle('delete', async(_: any, id: string) => {
+  await new VeiculoRepository().deletarVeiculo(id);
 })

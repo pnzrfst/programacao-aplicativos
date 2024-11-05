@@ -87,4 +87,19 @@ export default class VeiculoRepository{
         }
     }
 
+    async deletarVeiculo(id: string){
+        try{
+            this.conectarBanco.connect();
+            const SQL = "DELETE FROM veiculos WHERE id = $1"
+            await this.conectarBanco.query(SQL, [id]);
+            return console.log('Deletado com sucesso')
+        }catch(error){
+            console.log(error);
+            return 
+        }finally{
+            this.conectarBanco.end();
+            this.conectarBanco = null;
+        }
+    }
+
 }

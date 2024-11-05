@@ -253,19 +253,18 @@ aside .marcas{
 }
 
 .mostrarVeiculos{
-  display: flex;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  width: 100vw;
   flex: 1;
-  height: fit-content;
   flex-wrap: wrap;
   padding: 2rem;
   margin-left: 1rem;
   gap: 2rem;
 }
 
-.container-veiculos{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.container-veiculos {
+  gap: 1rem; 
   padding: 1rem;
   width: 100%;
   list-style: none;
@@ -274,7 +273,7 @@ aside .marcas{
 .veiculo{
   display: flex;
   height: fit-content;
-  width: fit-content;
+  width: 100%;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.123);
   border-radius: 1rem;
 }
