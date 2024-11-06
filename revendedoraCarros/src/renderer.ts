@@ -30,11 +30,11 @@ document.getElementById('salvarCadastro').addEventListener("click", (event: Mous
   listaDeVeiculos.push(novoVeiculo);
   (window as any).dbAPI.criaVeiculo(novoVeiculo)
 
-  modelo.value = ""
-  corVeiculo.value = ""
-  anoVeiculo.value = ""
-  precoVeiculo.value = ""
-  fotoVeiculo.value = ""
+    modelo.value = ""
+    corVeiculo.value = ""
+    anoVeiculo.value = ""
+    precoVeiculo.value = ""
+    fotoVeiculo.value = ""
 
   mostrarVeiculos()
 })
@@ -49,7 +49,8 @@ window.onload = async() =>{
       veiculo.cor_veiculo,
       veiculo.ano,
       parseFloat(veiculo.preco_veiculo),
-      veiculo.foto_veiculo
+      veiculo.foto_veiculo,
+      veiculo.id
     );
 
     listaDeVeiculos.push(novoVeiculo);
@@ -71,7 +72,7 @@ function mostrarVeiculos(){
               <h1>${listaDeVeiculos[i].getModelo()}</h1>
               <p>${String(listaDeVeiculos[i].getPreco())}</p>
               <div class="btns-veiculo">
-                <button id="verVeiculo" onclick="verVeiculos">Ver detalhes</button>
+                <button id="verVeiculo" onclick="verDetalhes('${listaDeVeiculos[i].getId()}')">Ver detalhes</button>
                 <button id="apagarVeiculo" onclick="deletarVeiculo('${listaDeVeiculos[i].getId()}')">Apagar</button>
               </div>
             </div>
@@ -83,13 +84,19 @@ function mostrarVeiculos(){
 
 async function deletarVeiculo(id: string){
   (window as any).dbAPI.deletarVeiculo(id);
+  
   listaDeVeiculos = listaDeVeiculos.filter(veiculo => veiculo.getId() !== id);
   mostrarVeiculos();
 }
 
 
-(window as any).deletarVeiculo = deletarVeiculo
+function verDetalhes(id: string){
+  (window as any).dbAPI.verDetalhes(id);
+}
 
+
+(window as any).deletarVeiculo = deletarVeiculo;
+(window as any).verDetalhes = verDetalhes
 
 
 

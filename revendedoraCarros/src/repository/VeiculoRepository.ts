@@ -47,8 +47,8 @@ export default class VeiculoRepository{
         try{
             this.conectarBanco.connect()
             
-            const SQL = "SELECT * FROM veiculos"
-            const veiculosCadastrados = await this.conectarBanco.query(SQL);
+            const SQL = "SELECT * FROM veiculos WHERE esta_ativo = $1"
+            const veiculosCadastrados = await this.conectarBanco.query(SQL, [true]);
             if(veiculosCadastrados.rows.length > 0){
                 return veiculosCadastrados.rows
             }else{
@@ -90,8 +90,9 @@ export default class VeiculoRepository{
     async deletarVeiculo(id: string){
         try{
             this.conectarBanco.connect();
-            const SQL = "DELETE FROM veiculos WHERE id = $1"
-            await this.conectarBanco.query(SQL, [id]);
+            console.log(id)
+            const SQL = "UPDATE veiculos SET esta_ativo = $1 WHERE id = $2"
+            await this.conectarBanco.query(SQL, [false, id]);
             return console.log('Deletado com sucesso')
         }catch(error){
             console.log(error);
