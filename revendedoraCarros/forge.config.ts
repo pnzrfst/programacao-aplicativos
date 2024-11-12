@@ -40,6 +40,14 @@ const config: ForgeConfig = {
             preload:{
               js: './src/preload.ts'
             }
+          },
+          {
+            html: './src/view/login/login.html',
+            js: './src/view/login/login.ts',
+            name: 'login',
+            preload: {
+              js: './src/preload.ts'
+            }
           }
         ],
       },

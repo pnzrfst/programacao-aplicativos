@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightgray;
+    color: rgb(17, 15, 15);
+}
+
+main{
+    padding: 3rem;
+    display: flex;
+    gap: 1rem;
+    background-color: #fff;
+    margin:  12.5rem auto;
+    max-width: 80%;
+    text-align: first baseline;
+}
+
+
+main .form-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 100%;
+}
+
+.form-login .inputs-form{
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid lightgray;
+    padding: 2rem;
+}
+
+.form-login h1{
+    align-self: center;
+    font-size: 2rem;
+}
+
+.inputs-form input{
+    width: 90%;
+    align-self: center;
+    margin-top: 10px;
+    border: 1px solid lightsteelblue;
+    padding: 0.3rem;
+}
+
+.inputs-form button{
+    width: 50%;
+    margin-top: 1rem;
+    align-self: center;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    padding: 2px;
+    cursor: pointer;
+    background-color: lightblue;
+    color: #fff;
+}
+
+/*---------------------------------------------------*/
+
+.form-cadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 100%;
+}
+
+.form-cadastro h1{
+    align-self: center;
+    font-size: 2rem;
+}
+
+.form-cadastro .inputs-cadastro{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.inputs-cadastro input{
+    width: 90%;
+    align-self: center;
+    margin-top: 10px;
+    border: 1px solid lightsteelblue;
+    padding: 0.3rem;
+}
+
+.inputs-cadastro button{
+    width: 50%;
+    margin-top: 1rem;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 2px;
+    background-color: lightblue;
+    color: #fff;
+    cursor: pointer;
+}
