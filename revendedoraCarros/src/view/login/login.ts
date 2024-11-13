@@ -58,5 +58,6 @@ document.getElementById('login').addEventListener('click', async (event: MouseEv
         console.log("Senha incorreta.")
         return
     }
+    
     await(window as any).navigationApi.voltarHomepage()
 })
