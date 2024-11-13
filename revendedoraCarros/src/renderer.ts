@@ -91,7 +91,7 @@ async function deletarVeiculo(id: string){
 
 
 function verDetalhes(id: string){
-  (window as any).dbAPI.verDetalhes(id);
+  (window as any).navigationApi.verDetalhes(id);
 }
 
 

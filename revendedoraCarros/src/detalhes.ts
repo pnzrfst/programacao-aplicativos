@@ -1,6 +1,6 @@
 
 document.getElementById('btn-return').addEventListener('click', () =>{
-    (window as any).dbAPI.voltarHomepage()
+    (window as any).navigationApi.voltarHomepage()
 })
 
 window.onload = async() =>{

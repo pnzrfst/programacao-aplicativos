@@ -18,6 +18,7 @@ export default class VeiculoRepository{
     
     async salvarUsuarioNoBanco(usuario: Usuario){
         try{
+            console.log('Email do usuário:', usuario.getEmail())
             this.conectarBanco.connect()
             const SQL = "INSERT INTO usuarios (id, nome_usuario, data_nascimento, email_usuario, senha_hash, criado_em, atualizado_em) VALUES ($1, $2, $3, $4, $5, $6, $7)";
             const values = [
@@ -44,8 +45,9 @@ export default class VeiculoRepository{
 
     async verificarCadastroExistente(email: string){
         try{
+            console.log(email)
             this.conectarBanco.connect();
-            const SQL = "SELECT * FROM usuarios WHERE email = $1"
+            const SQL = "SELECT * FROM usuarios WHERE email_usuario = $1"
             const cadastroEncontrado = await this.conectarBanco.query(SQL, [email]);
             return cadastroEncontrado.rows[0];
 
